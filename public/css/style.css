@@ -25,6 +25,17 @@ h1 {
 	margin-bottom: 0;
 	text-align: center;
 }
+
+h2 {
+  font-family: 'Qwigley', Helvetica, Sans-serif;	   
+  text-decoration: underline;
+  font-size: 1.8em;
+font-weight: 600;
+  color: #4f4d47;
+margin-top: 20px;
+margin-bottom: 0;
+text-align: center;
+}
 .wrapper {
     background: white;
     margin: 70px auto;
@@ -50,7 +61,7 @@ ul {
   background-color: #4f4d47;
 }
 
-li {
+.navB li {
   float: left;
 }
 
@@ -125,7 +136,33 @@ border: 0;
 border-spacing: 0px;
   }
     img.boardchip {
-      
 width: 200px;
 height: 200px;
+  }
+
+  .scoreTable {
+    border-collapse: collapse;
+    text-align: center;
+    width: 98%;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #4f4d47;
+  }
+  .scoreTable td, th {
+    border: 1px solid #4f4d47;
+    padding: 5px;
+  }
+
+  .scoreTable th {
+    border: 2px solid #4f4d47;
+    text-decoration: underline;
+    padding: 5px;
+  }
+  ol {
+    list-style-type: decimal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
   }

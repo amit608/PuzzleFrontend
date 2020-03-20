@@ -1,112 +1,124 @@
+<!-- by Gad Zuaretz 305212284 | Amit Ronen 305328189 -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
-    <title>Page Title</title>
+    <title>The Great Sliding puzzle </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='%PUBLIC_URL%/css/style.css'>
     <script src='main.js'></script>
 </head>
+
 <body>
-  <div class="wrapper">
-    <h1>The Great Sliding puzzle </h1>
+    <div class="wrapper">
+        <h1>The Great Sliding puzzle</h1>
         <div class="title"> - by Gad and Amit - </div>
         <div>
-            <ul>
+            <ul class="navB">
 
                 <li>
-                   <a id="loginNav">log in / sign in</a>
+                    <a id="loginNav">log in / log out</a>
                 </li>
                 <li>
-                   <a id="playNav">play!</a>
+                    <a id="playNav">play!</a>
                 </li>
                 <li>
-                        <a id="scoreNav">Hall of fame</a>
-                </li>  
+                    <a id="scoreNav">Hall of fame</a>
+                </li>
             </ul>
         </div>
 
-                <!-- login -->
-                <div class="subwrap" id="login">
-                    <div id="enterName">
-                  <input type="text" name="username" id="username" placeholder="enter username"> 
-                  <input type="button" id="usernameButton" value="sign in"><br>
-                  <b id="err" class="err"></b>
-                  </div>
-                  <div id="logged">
-                      you are connected as: <span id="user"></span> <input type="button" id="disconButton" value="sign out"> 
-                  </div>
-              </div>
-              <!-- end login -->
+        <!-- login -->
+        <div class="subwrap" id="login">
+            <div id="enterName">
+                <input type="text" name="username" id="username" placeholder="enter username">
+                <input type="button" id="usernameButton" value="sign in"><br>
+                <b id="err" class="err"></b>
+            </div>
+            <div id="logged">
+                you are connected as: <span id="user"></span> <input type="button" id="disconButton" value="sign out">
+            </div>
+        </div>
+        <!-- end login -->
 
         <!-- choose board -->
         <div class="subwrap" id="chooseBoardDiv">
-            
-        <div class="thumb"><a id="easyChoose">
-            <img src="img/th_easy.jpg" alt="img" width="200" height="200"/>
-                <h2>easy
-                </h2>
-       </a> </div>
-    
-    
-        <div class="thumb"><a id="mediumChoose">
-            <img src="img/th_easy.jpg" alt="img" width="200" height="200"/>
-                <h2>medium
-                </h2>
-        </a></div>
-        
-        
-        <div class="thumb"><a id="hardChoose">
-            <img src="img/th_easy.jpg" alt="img" width="200" height="200"/>
-                <h2>hard
-                </h2>
-        </a></div>
-        
+
+            <div class="thumb"><a id="easyChoose">
+                    <img src="img/th_easy.jpg" alt="img" width="200" height="200" />
+                    <h2>easy
+                    </h2>
+                </a> </div>
+
+
+            <div class="thumb"><a id="mediumChoose">
+                    <img src="img/th_medium.jpg" alt="img" width="200" height="200" />
+                    <h2>medium
+                    </h2>
+                </a></div>
+
+
+            <div class="thumb"><a id="hardChoose">
+                    <img src="img/th_hard.jpg" alt="img" width="200" height="200" />
+                    <h2>hard
+                    </h2>
+                </a></div>
+
+        </div>
+        <!-- end choose board -->
+
+        <!-- board -->
+        <table class="subtable" id="board">
+            <tr>
+                <td class="boardwrap">
+                    <div class="picwrap">
+                        <table class="boardcontainer">
+                            <tr>
+                                <td><img id="0" class="boardchip" /></td>
+                                <td><img id="1" class="boardchip" /></td>
+                                <td><img id="2" class="boardchip" /></td>
+                            </tr>
+                            <tr>
+                                <td><img id="3" class="boardchip" /></td>
+                                <td><img id="4" class="boardchip" /></td>
+                                <td><img id="5" class="boardchip" /></td>
+                            </tr>
+                            <tr>
+                                <td><img id="6" class="boardchip" /></td>
+                                <td><img id="7" class="boardchip" /></td>
+                                <td><img id="8" class="boardchip" /></td>
+                            </tr>
+                        </table>
+                        <img src="img/th_easy.jpg" alt="img" width="600" height="600" style="display: none" />
+                    </div>
+                </td>
+                <td class="sidewrap">
+                    <h2 id="lev"></h2>
+                    <span>
+                        time: <b id="timeCounter"></b>
+                    </span>
+                </td>
+            </tr>
+
     </div>
-    <!-- end choose board -->
 
-    <!-- board -->
-    <table class="subtable" id="board">
-      <tr>
-          <td class="boardwrap">            
-              <div  class="picwrap">
-                  <table class="boardcontainer">
-                      <tr>
-                          <td><img id="0" class="boardchip"/></td>
-                          <td><img id="1" class="boardchip"/></td>
-                          <td><img id="2" class="boardchip"/></td>
-                      </tr>
-                      <tr>
-                          <td><img id="3" class="boardchip"/></td>
-                          <td><img id="4" class="boardchip"/></td>
-                          <td><img id="5" class="boardchip"/></td>
-                      </tr>
-                      <tr>
-                          <td><img id="6" class="boardchip"/></td>
-                          <td><img id="7" class="boardchip"/></td>
-                          <td><img id="8" class="boardchip"/></td>
-                      </tr>
-                  </table>
-      <img src="img/th_easy.jpg" alt="img" width="600" height="600" style="display: none"/>
-      </div>
-  </td>
-          <td class="sidewrap"> <h2 id="lev"></h2>
-          <span>
-              time: <b id="timeCounter"></b>
-          </span></td>
-      </tr>
+    </table>
+    <!-- end board -->
+    <!-- hall of fame -->
+    <div class="subwrap" id="score">
+        <h2>score board and statistics</h2>
+        <table class="scoreTable">
+            <tr><th></th><th>easy</th><th>medium</th><th>hard</th></tr>
+            <tr><td><b>ranks</b></td><td><ol id="elst"></ol></td><td><ol id="mlst"></ol></td><td><ol id="hlst"></ol></td></tr>
+            <tr><td><b>number of games played</b></td><td><span id="enum"></span></td><td><span id="mnum"></span></td><td><span id="hnum"></span></td></tr>
+            <tr><td><b>average time</b></td><td><span id="eavg"></span></td><td><span id="mavg"></span></td><td><span id="havg"></span></td></tr>
+            <tr><td><b>number of games played</b></td><td colspan="3"><dl id="plst"></dl></td></tr>
+            </table>
+    </div>
+    <!-- end hall of fame -->
 
-  </div>
-
-</table>
-<!-- end board -->
-<!-- login -->
-<div class="subwrap" id="score">
-    score
-    
-</div>
-<!-- end login -->
-
-  </div>  
+    </div>
 </body>
+
 </html>
